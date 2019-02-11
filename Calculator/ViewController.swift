@@ -12,6 +12,26 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var label: UILabel!
     
+    var isFirstDigit = true
+    var operation1 : Double = 0
+    var operation2 = "="
+    
+    var displayValue : Double {
+        
+        get {
+            
+            return NumberFormatter().number(from: label.text!)!.doubleValue
+            
+        }
+        
+        set {
+            
+            label.text = String(format: "%4.0f", newValue)
+            isFirstDigit = true
+            operation2 = "="
+            
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
