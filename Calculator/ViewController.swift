@@ -12,20 +12,21 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var label: UILabel!
     
-    var isFirstDigit = true
-    var operation1 : Double = 0
-    var operation2 = "="
+    var isFirstDigit = true // check whether anything was entered before
+    var operation1 : Double = 0 // variable to store first number of equestion 
+    var operation2 = "=" // variable to save currently applied operation
     
-    var displayValue : Double {
+    var displayValue : Double { //resulting value
         
+        //how entered number is formatted to be Double
         get {
             
             return NumberFormatter().number(from: label.text!)!.doubleValue
             
         }
-        
+        //when a new displayValue is calcualted, we format it and make preperation for next calculation
         set {
-            
+         
             label.text = String(format: "%4.0f", newValue)
             isFirstDigit = true
             operation2 = "="
