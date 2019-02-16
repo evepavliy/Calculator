@@ -38,7 +38,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    @IBAction func digitPressed(_ sender: Any) {
+    @IBAction func digitPressed(_ sender: AnyObject) {
+        
+        let digit = sender.currentTitle!
+        label.text = isFirstDigit ? digit : label.text! + digit!
+        isFirstDigit = false 
+        
     }
     
     @IBAction func cancel(_ sender: Any) {
