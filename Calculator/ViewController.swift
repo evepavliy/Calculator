@@ -47,13 +47,26 @@ class ViewController: UIViewController {
     }
     
     @IBAction func cancel(_ sender: Any) {
+        label.text = ""
     }
     
-    @IBAction func operation(_ sender: Any) {
+    @IBAction func operation(_ sender: AnyObject) {
+        
+        operation2 = sender.currentTitle!
+        operation1 = displayValue
+        isFirstDigit = true
     }
     
     @IBAction func calculation(_ sender: Any) {
+        
+        switch operation2 {
+        case "+" :
+            displayValue += operation1
+        default:
+          break
+        }
     }
+    
     
 }
 
