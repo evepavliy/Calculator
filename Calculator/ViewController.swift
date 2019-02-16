@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         
         let digit = sender.currentTitle!
         label.text = isFirstDigit ? digit : label.text! + digit!
-        isFirstDigit = false 
+        isFirstDigit = false
         
     }
     
