@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func cancel(_ sender: Any) {
-        label.text = ""
+        label.text = "0"
     }
     
     @IBAction func operation(_ sender: AnyObject) {
@@ -62,6 +62,13 @@ class ViewController: UIViewController {
         switch operation2 {
         case "+" :
             displayValue += operation1
+        case "*" :
+            displayValue *= operation1
+        case "-" :
+            displayValue = operation1 - displayValue
+        case "/" :
+            displayValue = operation1 / displayValue
+            
         default:
           break
         }
